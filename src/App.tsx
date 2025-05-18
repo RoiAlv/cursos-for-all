@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import CategoryManager from "./pages/CategoryManager";
 import QuejaForm from "./pages/QuejaForm";
 import QuejaList from "./pages/QuejasList";
+import Contact from "./pages/Contact";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <div className="flex grow justify-center items-center">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
