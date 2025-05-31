@@ -20,8 +20,8 @@ function Home() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
-          {pizzas.map((pizza: { nombre: string; descripcion: string }, index: number) => (
-            <PizzaCard key={index} nombre={pizza.nombre} descripcion={pizza.descripcion} />
+          {pizzas.map((pizza: { nombre: string; descripcion: string; grupo: string; }, index: number) => (
+            <PizzaCard key={index} nombre={pizza.nombre} descripcion={pizza.descripcion} grupo={pizza.grupo} />
           ))}
         </div>
 
