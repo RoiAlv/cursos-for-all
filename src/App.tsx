@@ -16,37 +16,39 @@ import QuejaForm from "./pages/QuejaForm";
 import QuejaList from "./pages/QuejasList";
 import Contact from "./pages/Contact";
 
-
 function App() {
-
   return (
-    <>
-      <BrowserRouter>
-        <div className="flex flex-col  h-screen ">
-          <Navbar />
-          <Toaster position="top-center" reverseOrder={false} />
-          <div className="flex grow justify-center items-center">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/userList" element={<UserList />} />
-              <Route path="/offers" element={<OffertList />} />
-              <Route path="/offers/:id" element={<OfferDetail />} />
-              <Route path="/offers/new" element={<OffertForm />} />
-              <Route path="/offers/edit/:id" element={<OffertForm />} />
-              <Route path="/categories" element={<CategoryManager />} />
-              <Route path="/feedback" element={<QuejaForm />} />
-              <Route path="/feedbackList" element={<QuejaList />} />
-            </Routes>
+    <div
+      className="relative min-h-screen bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: "url('src/assets/entrada.jpg')" }}
+    >
+      <div className="relative z-10 bg-white/80 dark:bg-black/60 min-h-screen">
+        <BrowserRouter>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <Toaster position="top-center" reverseOrder={false} />
+            <div className="flex grow justify-center items-center">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/userList" element={<UserList />} />
+                <Route path="/offers" element={<OffertList />} />
+                <Route path="/offers/:id" element={<OfferDetail />} />
+                <Route path="/offers/new" element={<OffertForm />} />
+                <Route path="/offers/edit/:id" element={<OffertForm />} />
+                <Route path="/categories" element={<CategoryManager />} />
+                <Route path="/feedback" element={<QuejaForm />} />
+                <Route path="/feedbackList" element={<QuejaList />} />
+              </Routes>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      
-      </BrowserRouter>
-    </>
+        </BrowserRouter>
+      </div>
+    </div>
   );
 }
 
