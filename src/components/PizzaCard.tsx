@@ -1,43 +1,73 @@
 // pizzas.tsx
 
+import cocacola from "../assets/cocacola.png";
+
+import york from "../assets/york.jpeg";
+import hawaiana from "../assets/hawaiana.jpeg";
+import pollito from "../assets/pollito.jpeg";
+import olivatun from "../assets/olivatun.jpeg";
+import peperoni from "../assets/peperoni.jpeg";
+import cuatroQuesos from "../assets/4quesos.jpeg";
+import huerta from "../assets/huerta.jpeg";
+import mediterranea from "../assets/mediterranea.jpeg";
+import laconGrelos from "../assets/lacon_grelos.jpeg";
+import mexicana from "../assets/mexicana.jpeg";
+import barbacoa from "../assets/barbacoa.jpeg";
+import rulina from "../assets/ruliña.jpeg";
+import gallega from "../assets/gallega.jpeg";
+import cuatroEstaciones from "../assets/cuatro estaciones.jpeg";
+import carbonara from "../assets/carbonara.jpeg";
+
+import zero from "../assets/zero.webp";
+import nestea from "../assets/nestea.webp";
+import kaslimon from "../assets/kaslimon.png";
+import kasnaranja from "../assets/kasnaranja.png";
+import aquariuslimon from "../assets/aquariuslimon.webp";
+import aquariusnaranja from "../assets/aquariusnaranja.png";
+import agua from "../assets/agua.png";
+import mahou from "../assets/mahou.webp";
+import estrella from "../assets/estrella.png";
+
+
+
 export const pizzas = [
-  { nombre: "La York", descripcion: "Tomate, mozzarella y jamón york", grupo: "A", imagen: "src/assets/york.jpeg" },
-  { nombre: "La Margarita", descripcion: "Tomate, queso y mozzarella.", grupo: "A", imagen: "src/assets/margarita.jpeg" },
-  { nombre: "La Perrito", descripcion: "Tomate, mozzarella y salchicha", grupo: "A", imagen: "src/assets/perrito.jpeg" },
-  { nombre: "La Hawaiiana", descripcion: "Tomate, mozzarella, jamón york y piña", grupo: "B", imagen: "src/assets/hawaiana.jpeg" },
-  { nombre: "La Pollito", descripcion: "Tomate, mozzarella, pollo y bacon", grupo: "B", imagen: "src/assets/pollito.jpeg" },
-  { nombre: "La York Bacona", descripcion: "Tomate, mozzarella, jamón york y bacon", grupo: "B", imagen: "src/assets/yorkbacon.jpeg" },
-  { nombre: "La Olivatun", descripcion: "Tomate, mozzarella, atún y aceitunas verdes", grupo: "B", imagen: "src/assets/olivatun.jpeg" },
-  { nombre: "La Pepperoni", descripcion: "Tomate, mozzarella y pepperoni", grupo: "B", imagen: "src/assets/peperoni.jpeg" },
-  { nombre: "La Cuatro Quesos", descripcion: "Tomate, mozzarella y mezcla de 4 quesos", grupo: "B", imagen: "src/assets/4quesos.jpeg" },
-  { nombre: "La Nutella", descripcion: "mozzarella, nutella y lacasitos", grupo: "B", imagen: "/img/pizzas/la-nutella.jpg" },
-  { nombre: "La Huerta", descripcion: "Tomate, mozzarella, pimiento rojo y verde, calabacín, berenjena, champiñones y maíz dulce", grupo: "C", imagen: "src/assets/huerta.jpeg" },
-  { nombre: "La Mediterranea", descripcion: "Tomate, mozzarella, jamón york, champiñones tomate en rodajas, cebolla y pimienta negra", grupo: "C", imagen: "src/assets/mediterranea.jpeg" },
-  { nombre: "La Anchoatún", descripcion: "Tomate, mozzarella, atún y anchoas", grupo: "C", imagen: "src/assets/anchoatun.jpeg" },
-  { nombre: "La Española", descripcion: "Tomate, mozzarella, jamón serrano, tomate en rodajas y aceite de oliva", grupo: "C", imagen: "/img/pizzas/la-espanola.jpg" },
-  { nombre: "La Lacon con Grelos", descripcion: "Tomate, mozzarella, grelos, lacón, chorizo, pimentón dulce, picante y aceite de oliva", grupo: "C", imagen: "src/assets/lacon_grelos.jpeg" },
-  { nombre: "La Mexicana", descripcion: "Tomate, mozzarella, carne de ternera, pimiento rojo, verde, y salsa picante", grupo: "C", imagen: "src/assets/mexicana.jpeg" },
-  { nombre: "La Barbacoa", descripcion: "Tomate, mozzarella, carne de ternera, bacon, y salsa barbacoa", grupo: "C", imagen: "src/assets/barbacoa.jpeg" },
-  { nombre: "La Ruliña", descripcion: "Base de queso crema, mozarella, rulo de cabra, cebolla caramelizada", grupo: "C", imagen: "src/assets/ruliña.jpeg" },
-  { nombre: "La Gallega", descripcion: "Tomate, mozzarella, queso tetilla, pulpo, pimenton dulce, picante y aceite de oliva", grupo: "D", imagen: "src/assets/gallega.jpeg" },
-  { nombre: "La Cuatro Estaciones", descripcion: "Tomate, mozzarella, jamón york, pepperoni, champiñones y aceitunas verdes", grupo: "D", imagen: "src/assets/cuatro estaciones.jpeg" },
-  { nombre: "La Caprichosa", descripcion: "Tomate, mozzarella, york, bacon, champiñones, atún y cebolla", grupo: "D", imagen: "/img/pizzas/la-caprichosa.jpg" },
-  { nombre: "La Carbonara", descripcion: "Nata, mozzarella, bacon, champiñones, cebolla, y pimienta negra", grupo: "D", imagen: "src/assets/carbonara.jpeg" },
-  { nombre: "La Campera", descripcion: "Tomate, mozzarella, carne de ternera, pollo, bacon y huevo", grupo: "D", imagen: "/img/pizzas/la-campera.jpg" },
-  { nombre: "La Tita", descripcion: "Tomate, mozzarella, jamón york, champiñones, pollo, cebolla y rulo de cabra", grupo: "D", imagen: "/img/pizzas/la-tita.jpg" },
+  { nombre: "La York", descripcion: "Tomate, mozzarella y jamón york", grupo: "A", imagen: york },
+  { nombre: "La Margarita", descripcion: "Tomate, queso y mozzarella.", grupo: "A", imagen: "" },
+  { nombre: "La Perrito", descripcion: "Tomate, mozzarella y salchicha", grupo: "A", imagen: "" },
+  { nombre: "La Hawaiiana", descripcion: "Tomate, mozzarella, jamón york y piña", grupo: "B", imagen: hawaiana },
+  { nombre: "La Pollito", descripcion: "Tomate, mozzarella, pollo y bacon", grupo: "B", imagen: pollito },
+  { nombre: "La York Bacona", descripcion: "Tomate, mozzarella, jamón york y bacon", grupo: "B", imagen: "" },
+  { nombre: "La Olivatun", descripcion: "Tomate, mozzarella, atún y aceitunas verdes", grupo: "B", imagen: olivatun },
+  { nombre: "La Pepperoni", descripcion: "Tomate, mozzarella y pepperoni", grupo: "B", imagen: peperoni },
+  { nombre: "La Cuatro Quesos", descripcion: "Tomate, mozzarella y mezcla de 4 quesos", grupo: "B", imagen: cuatroQuesos },
+  { nombre: "La Nutella", descripcion: "mozzarella, nutella y lacasitos", grupo: "B", imagen: "" },
+  { nombre: "La Huerta", descripcion: "Tomate, mozzarella, pimiento rojo y verde, calabacín, berenjena, champiñones y maíz dulce", grupo: "C", imagen: huerta },
+  { nombre: "La Mediterranea", descripcion: "Tomate, mozzarella, jamón york, champiñones tomate en rodajas, cebolla y pimienta negra", grupo: "C", imagen: mediterranea },
+  { nombre: "La Anchoatún", descripcion: "Tomate, mozzarella, atún y anchoas", grupo: "C", imagen: "" },
+  { nombre: "La Española", descripcion: "Tomate, mozzarella, jamón serrano, tomate en rodajas y aceite de oliva", grupo: "C", imagen: "" },
+  { nombre: "La Lacon con Grelos", descripcion: "Tomate, mozzarella, grelos, lacón, chorizo, pimentón dulce, picante y aceite de oliva", grupo: "C", imagen: laconGrelos },
+  { nombre: "La Mexicana", descripcion: "Tomate, mozzarella, carne de ternera, pimiento rojo, verde, y salsa picante", grupo: "C", imagen: mexicana },
+  { nombre: "La Barbacoa", descripcion: "Tomate, mozzarella, carne de ternera, bacon, y salsa barbacoa", grupo: "C", imagen: barbacoa },
+  { nombre: "La Ruliña", descripcion: "Base de queso crema, mozarella, rulo de cabra, cebolla caramelizada", grupo: "C", imagen: rulina },
+  { nombre: "La Gallega", descripcion: "Tomate, mozzarella, queso tetilla, pulpo, pimenton dulce, picante y aceite de oliva", grupo: "D", imagen: gallega },
+  { nombre: "La Cuatro Estaciones", descripcion: "Tomate, mozzarella, jamón york, pepperoni, champiñones y aceitunas verdes", grupo: "D", imagen: cuatroEstaciones },
+  { nombre: "La Caprichosa", descripcion: "Tomate, mozzarella, york, bacon, champiñones, atún y cebolla", grupo: "D", imagen: "" },
+  { nombre: "La Carbonara", descripcion: "Nata, mozzarella, bacon, champiñones, cebolla, y pimienta negra", grupo: "D", imagen: carbonara },
+  { nombre: "La Campera", descripcion: "Tomate, mozzarella, carne de ternera, pollo, bacon y huevo", grupo: "D", imagen: "" },
+  { nombre: "La Tita", descripcion: "Tomate, mozzarella, jamón york, champiñones, pollo, cebolla y rulo de cabra", grupo: "D", imagen: "" },
 ];
 
 export const bebidas = [
-  { nombre: "Coca-Cola", grupo: "A", imagen: "src/assets/cocacola.png" },
-  { nombre: "Coca-Cola zero", grupo: "A", imagen: "src/assets/zero.webp" },
-  { nombre: "Nestea", grupo: "A", imagen: "src/assets/nestea.webp" },
-  { nombre: "Kas Limón", grupo: "B", imagen: "src/assets/kaslimon.png" },
-  { nombre: "Kas Naranja", grupo: "B", imagen: "src/assets/kasnaranja.png" },
-  { nombre: "Aquarius Limón",  grupo: "B", imagen: "src/assets/aquariuslimon.webp" },
-  { nombre: "Aquarius Naranja", grupo: "B", imagen: "src/assets/aquariusnaranja.png" },
-  { nombre: "Agua", grupo: "B", imagen: "src/assets/agua.png" },
-  { nombre: "Mahou", grupo: "B", imagen: "src/assets/mahou.webp" },
-  { nombre: "Estrella galicia", grupo: "B", imagen: "src/assets/estrella.png" },
+  { nombre: "Coca-Cola", grupo: "A", imagen: cocacola },
+  { nombre: "Coca-Cola zero", grupo: "A", imagen: zero },
+  { nombre: "Nestea", grupo: "A", imagen: nestea },
+  { nombre: "Kas Limón", grupo: "B", imagen: kaslimon },
+  { nombre: "Kas Naranja", grupo: "B", imagen: kasnaranja },
+  { nombre: "Aquarius Limón", grupo: "B", imagen: aquariuslimon },
+  { nombre: "Aquarius Naranja", grupo: "B", imagen: aquariusnaranja },
+  { nombre: "Agua", grupo: "B", imagen: agua },
+  { nombre: "Mahou", grupo: "B", imagen: mahou },
+  { nombre: "Estrella galicia", grupo: "B", imagen: estrella },
 ];
 
 export const precios = {
