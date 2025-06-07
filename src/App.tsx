@@ -15,12 +15,13 @@ import CategoryManager from "./pages/CategoryManager";
 import QuejaForm from "./pages/QuejaForm";
 import QuejaList from "./pages/QuejasList";
 import Contact from "./pages/Contact";
+import entrada from "./assets/entrada.jpg"
 
 function App() {
   return (
     <div
       className="relative min-h-screen bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: "url('src/assets/entrada.jpg')" }}
+      style={{ backgroundImage: `url(${entrada})` }}
     >
       <div className="relative z-10 bg-white/80 dark:bg-black/60 min-h-screen">
         <BrowserRouter>
