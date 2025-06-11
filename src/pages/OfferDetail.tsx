@@ -27,7 +27,7 @@ function OfferDetail() {
 
   if(loading) return <div>Loading...</div>
   if(error) return <div>Error: {error}</div>
-  if(!offer) return <div>cursos no encontrados</div>
+  if(!offer) return <div>pedidos no encontrados</div>
 
   return (
     <div className="text-white">

@@ -8,7 +8,6 @@ function OfferList() {
   const [offers, setOffers] = useState<Offer[]>();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  //const [titleQuery, setTitleQuery] = useState(null)
 
   const [queryParams, setQueryParams] = useSearchParams();
   const titleQuery = queryParams.get("title") || "";
@@ -26,29 +25,35 @@ function OfferList() {
   };
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm("¿Estás seguro que quieres borrar esta oferta?"))
+    if (!window.confirm("¿Estás seguro que quieres borrar este pedido?"))
       return;
 
     try {
       await OfferService.delete(id);
       setOffers(offers?.filter((offer) => offer.id !== id));
-      toast.success("Oferta borrada correctamente!");
+      toast.success("Pedido borrado correctamente!");
     } catch (error) {
       setError(error instanceof Error ? error.message : "Error desconocido");
     }
   };
 
+  
+  const getTotalFromDescription = (desc: string | undefined): string => {
+    if (!desc) return "0.00";
+    const regex = /(\d+(\.\d+)?)\s*€/g;
+    let match;
+    let total = 0;
+
+    while ((match = regex.exec(desc)) !== null) {
+      total += parseFloat(match[1]);
+    }
+
+    return total.toFixed(2);
+  };
+
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-4xl font-extrabold dark:text-white">
-        Lista de cursos
-      </h2>
-      <Link
-        to="/offers/new"
-        className="text-white w-fit bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-      >
-        Añadir nuevo curso
-      </Link>
+      <h2 className="text-4xl font-extrabold dark:text-white">Lista de pedidos</h2>
 
       <label
         htmlFor="search"
@@ -91,32 +96,48 @@ function OfferList() {
 
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {offers?.length === 0 && <p>No hay cursos disponibles</p>}
+      {offers?.length === 0 && <p>No hay pedidos disponibles</p>}
+
       <div className="flex flex-wrap flex-row gap-4 items-center justify-center">
+        {offers?.map((offer) => (
+          <div key={offer.id} className="">
+            <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {offer.title}
+              </h5>
 
-      {offers?.map((offer) => (
-        <div key={offer.id} className="">
-          <div
-  
-            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-          >
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {offer.title}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {offer.description}
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-4">
+              <p className="mb-2 font-normal whitespace-pre-line text-gray-700 dark:text-gray-400">
+                {offer.description}
+              </p>
 
-            <Link className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" to={`/offers/${offer.id}`}>Ver</Link>
-            <Link className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" to={`/offers/edit/${offer.id}`}>Editar</Link>
-            <button className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" onClick={() => handleDelete(offer.id)}>Borrar</button>
+              <p className="mb-4 font-semibold text-red-700 dark:text-red-400">
+                Total pedido: {getTotalFromDescription(offer.description)} €
+              </p>
+
+              <div className="flex items-center justify-center gap-4 mt-4">
+                <Link
+                  className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  to={`/offers/${offer.id}`}
+                >
+                  Ver
+                </Link>
+                <Link
+                  className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  to={`/offers/edit/${offer.id}`}
+                >
+                  Editar
+                </Link>
+                <button
+                  className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  onClick={() => handleDelete(offer.id)}
+                >
+                  Borrar
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-            </div>
-
+        ))}
+      </div>
     </div>
   );
 }

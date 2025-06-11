@@ -27,6 +27,7 @@ import aquariusnaranja from "../assets/aquariusnaranja.png";
 import agua from "../assets/agua.png";
 import mahou from "../assets/mahou.webp";
 import estrella from "../assets/estrella.png";
+import { useCart } from "../contexts/CartContext";
 
 
 
@@ -88,11 +89,15 @@ export function PizzaCard({
   grupo: string;
   imagen: string;
 }) {
+  const { addItem } = useCart();
+
   const precio = precios[grupo as keyof typeof precios] ?? {
     fraccion: '—',
     mediana: '—',
     familiar: '—',
   };
+
+  const parsePrice = (p: string) => parseFloat(p.replace('€', '').replace(',', '.'));
 
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col justify-between">
@@ -107,13 +112,37 @@ export function PizzaCard({
       </div>
 
       <div className="mt-4 flex flex-col gap-2">
-        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+         onClick={() =>
+          addItem({
+            nombre,
+            tipo: "pizza",
+            tamaño: "fraccion",
+            precio: parsePrice(precio.fraccion),
+          })
+        }>
           Fracción: {precio.fraccion}
         </button>
-        <button className="w-full bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition">
+        <button className="w-full bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition"
+        onClick={() =>
+          addItem({
+            nombre,
+            tipo: "pizza",
+            tamaño: "mediana",
+            precio: parsePrice(precio.mediana),
+          })
+        }>
           Mediana: {precio.mediana}
         </button>
-        <button className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        <button className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+        onClick={() =>
+          addItem({
+            nombre,
+            tipo: "pizza",
+            tamaño: "familiar",
+            precio: parsePrice(precio.familiar),
+          })
+        }>
           Familiar: {precio.familiar}
         </button>
       </div>
@@ -146,11 +175,16 @@ export function BebidaCard({
   grupo: string;
   imagen: string;
 }) {
+
+  const { addItem } = useCart();
+
   const precio = precios[grupo as keyof typeof precios] ?? {
     fraccion: '—',
     mediana: '—',
     familiar: '—',
   };
+
+  const parsePrice = (p: string) => parseFloat(p.replace('€', '').replace(',', '.'));
 
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col justify-between">
@@ -164,7 +198,15 @@ export function BebidaCard({
       </div>
 
       <div className="mt-4 flex flex-col gap-2">
-        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+        onClick={() =>
+          addItem({
+            nombre,
+            tipo: "bebida",
+            tamaño: "unica",
+            precio: parsePrice(precio.fraccion),
+          })
+        }>
           {precio.fraccion}
         </button>
       </div>

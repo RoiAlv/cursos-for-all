@@ -16,6 +16,7 @@ import QuejaForm from "./pages/QuejaForm";
 import QuejaList from "./pages/QuejasList";
 import Contact from "./pages/Contact";
 import entrada from "./assets/entrada.jpg"
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/categories" element={<CategoryManager />} />
                 <Route path="/feedback" element={<QuejaForm />} />
                 <Route path="/feedbackList" element={<QuejaList />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </div>
             <Footer />
