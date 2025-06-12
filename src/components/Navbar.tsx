@@ -3,12 +3,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { Collapse } from 'flowbite';
 import { useRef } from 'react';
 import patoLucas from '../assets/Pato_Lucas.webp';
-import { useCart } from '../contexts/CartContext'; // Asegúrate de tener este contexto
-import { FaShoppingCart } from 'react-icons/fa'; // Usa react-icons
+import { useCart } from '../contexts/CartContext';
+import { FaShoppingCart } from 'react-icons/fa';
 
 function Navbar() {
   const { user, isAdmin, isAuthenticated, logout } = useAuth();
-  const { cartItemCount } = useCart(); // Total de productos en el carrito
+  const { cartItemCount } = useCart();
   const menuHamburguesa = useRef(null);
   const menuHamburguesaTriger = useRef(null);
 
@@ -32,7 +32,6 @@ function Navbar() {
         </Link>
 
         <div className="flex items-center gap-4 md:order-2">
-          {/* Botón Carrito */}
           {isAuthenticated && (
             <Link to="/cart" className="relative text-gray-800 dark:text-white hover:text-red-600">
               <FaShoppingCart size={24} />
@@ -90,75 +89,90 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Menú hamburguesa desplegable */}
         <div ref={menuHamburguesa} id="targetEl" className="hidden"></div>
 
-        {/* Menú principal */}
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link
                 to="/"
-                className="block py-2 px-3 text-white bg-red-700 rounded-sm md:bg-transparent md:text-red-700 md:p-0 md:dark:text-red-500"
-                aria-current="page"
+                className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Home
               </Link>
             </li>
+
             {!isAuthenticated && (
               <li>
                 <Link
                   to="/register"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   Registro
                 </Link>
               </li>
             )}
+
             {isAuthenticated && (
               <li>
                 <Link
                   to="/profile"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   Perfil
                 </Link>
               </li>
             )}
+
             {isAdmin && (
               <>
                 <li>
-                  <Link to="/userList" className="block py-2 px-3 text-gray-900 hover:text-red-700 dark:text-white">
+                  <Link
+                    to="/userList"
+                    className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  >
                     Usuarios
                   </Link>
                 </li>
                 <li>
-                  <Link to="/offers" className="block py-2 px-3 text-gray-900 hover:text-red-700 dark:text-white">
+                  <Link
+                    to="/offers"
+                    className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  >
                     Pedidos
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/categories" className="block py-2 px-3 text-gray-900 hover:text-red-700 dark:text-white">
-                    Categorías
                   </Link>
                 </li>
               </>
             )}
+
             {isAuthenticated && (
               <>
                 <li>
-                  <Link to="/feedback" className="block py-2 px-3 text-gray-900 hover:text-red-700 dark:text-white">
+                  <Link
+                    to="/feedback"
+                    className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  >
                     Formulario de Queja/Sugerencia
                   </Link>
                 </li>
                 <li>
-                  <Link to="/feedbackList" className="block py-2 px-3 text-gray-900 hover:text-red-700 dark:text-white">
+                  <Link
+                    to="/feedbackList"
+                    className="block py-2 px-3 rounded-sm text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  >
                     Lista de Quejas/Sugerencias
                   </Link>
                 </li>
               </>
             )}
-            <span className="text-white">{userLogured()}</span>
+
+            {isAuthenticated && (
+              <li>
+                <span className="block py-2 px-3 text-gray-500 italic md:p-0 dark:text-gray-300">
+                  {userLogured()}
+                </span>
+              </li>
+            )}
           </ul>
         </div>
       </div>

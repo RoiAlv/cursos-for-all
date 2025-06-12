@@ -17,6 +17,9 @@ import rulina from "../assets/ruliña.jpeg";
 import gallega from "../assets/gallega.jpeg";
 import cuatroEstaciones from "../assets/cuatro estaciones.jpeg";
 import carbonara from "../assets/carbonara.jpeg";
+import margarita from "../assets/margarita.jpeg";
+import perrito from "../assets/perrito.jpeg";
+import yorkbacona from "../assets/yorkbacona.jpeg";
 
 import zero from "../assets/zero.webp";
 import nestea from "../assets/nestea.webp";
@@ -33,11 +36,11 @@ import { useCart } from "../contexts/CartContext";
 
 export const pizzas = [
   { nombre: "La York", descripcion: "Tomate, mozzarella y jamón york", grupo: "A", imagen: york },
-  { nombre: "La Margarita", descripcion: "Tomate, queso y mozzarella.", grupo: "A", imagen: "" },
-  { nombre: "La Perrito", descripcion: "Tomate, mozzarella y salchicha", grupo: "A", imagen: "" },
+  { nombre: "La Margarita", descripcion: "Tomate, queso y mozzarella.", grupo: "A", imagen: margarita },
+  { nombre: "La Perrito", descripcion: "Tomate, mozzarella y salchicha", grupo: "A", imagen: perrito },
   { nombre: "La Hawaiiana", descripcion: "Tomate, mozzarella, jamón york y piña", grupo: "B", imagen: hawaiana },
   { nombre: "La Pollito", descripcion: "Tomate, mozzarella, pollo y bacon", grupo: "B", imagen: pollito },
-  { nombre: "La York Bacona", descripcion: "Tomate, mozzarella, jamón york y bacon", grupo: "B", imagen: "" },
+  { nombre: "La York Bacona", descripcion: "Tomate, mozzarella, jamón york y bacon", grupo: "B", imagen: yorkbacona },
   { nombre: "La Olivatun", descripcion: "Tomate, mozzarella, atún y aceitunas verdes", grupo: "B", imagen: olivatun },
   { nombre: "La Pepperoni", descripcion: "Tomate, mozzarella y pepperoni", grupo: "B", imagen: peperoni },
   { nombre: "La Cuatro Quesos", descripcion: "Tomate, mozzarella y mezcla de 4 quesos", grupo: "B", imagen: cuatroQuesos },
@@ -59,16 +62,16 @@ export const pizzas = [
 ];
 
 export const bebidas = [
-  { nombre: "Coca-Cola", grupo: "A", imagen: cocacola },
-  { nombre: "Coca-Cola zero", grupo: "A", imagen: zero },
-  { nombre: "Nestea", grupo: "A", imagen: nestea },
-  { nombre: "Kas Limón", grupo: "B", imagen: kaslimon },
-  { nombre: "Kas Naranja", grupo: "B", imagen: kasnaranja },
-  { nombre: "Aquarius Limón", grupo: "B", imagen: aquariuslimon },
-  { nombre: "Aquarius Naranja", grupo: "B", imagen: aquariusnaranja },
-  { nombre: "Agua", grupo: "B", imagen: agua },
-  { nombre: "Mahou", grupo: "B", imagen: mahou },
-  { nombre: "Estrella galicia", grupo: "B", imagen: estrella },
+  { nombre: "Coca-Cola", grupo: "refrescos", imagen: cocacola },
+  { nombre: "Coca-Cola zero", grupo: "refrescos", imagen: zero },
+  { nombre: "Nestea", grupo: "refrescos", imagen: nestea },
+  { nombre: "Kas Limón", grupo: "refrescos", imagen: kaslimon },
+  { nombre: "Kas Naranja", grupo: "refrescos", imagen: kasnaranja },
+  { nombre: "Aquarius Limón", grupo: "refrescos", imagen: aquariuslimon },
+  { nombre: "Aquarius Naranja", grupo: "refrescos", imagen: aquariusnaranja },
+  { nombre: "Agua", grupo: "agua", imagen: agua },
+  { nombre: "Mahou", grupo: "cerveza", imagen: mahou },
+  { nombre: "Estrella galicia", grupo: "cerveza", imagen: estrella },
 ];
 
 export const precios = {
@@ -77,6 +80,13 @@ export const precios = {
   C: { fraccion: '2€', mediana: '12€', familiar: '15€' },
   D: { fraccion: '2€', mediana: '13€', familiar: '16€' },
 };
+
+export const preciosBebidas = {
+  refrescos: '1,50€', 
+  agua: '1,00€', 
+  cerveza: '1,70€', 
+};
+
 
 export function PizzaCard({
   nombre,
@@ -178,7 +188,7 @@ export function BebidaCard({
 
   const { addItem } = useCart();
 
-  const precio = precios[grupo as keyof typeof precios] ?? {
+  const precio = preciosBebidas[grupo as keyof typeof preciosBebidas] ?? {
     fraccion: '—',
     mediana: '—',
     familiar: '—',
@@ -204,10 +214,10 @@ export function BebidaCard({
             nombre,
             tipo: "bebida",
             tamaño: "unica",
-            precio: parsePrice(precio.fraccion),
+            precio: parsePrice(precio),
           })
         }>
-          {precio.fraccion}
+          {precio}
         </button>
       </div>
     </div>

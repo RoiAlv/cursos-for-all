@@ -7,11 +7,9 @@ import Profile from "./pages/Profile";
 import UserList from "./pages/UserList";
 import Navbar from "./components/Navbar";
 import OffertList from "./pages/OfferList";
-import OffertForm from "./pages/OfferForm";
 import OfferDetail from "./pages/OfferDetail";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
-import CategoryManager from "./pages/CategoryManager";
 import QuejaForm from "./pages/QuejaForm";
 import QuejaList from "./pages/QuejasList";
 import Contact from "./pages/Contact";
@@ -39,9 +37,6 @@ function App() {
                 <Route path="/userList" element={<UserList />} />
                 <Route path="/offers" element={<OffertList />} />
                 <Route path="/offers/:id" element={<OfferDetail />} />
-                <Route path="/offers/new" element={<OffertForm />} />
-                <Route path="/offers/edit/:id" element={<OffertForm />} />
-                <Route path="/categories" element={<CategoryManager />} />
                 <Route path="/feedback" element={<QuejaForm />} />
                 <Route path="/feedbackList" element={<QuejaList />} />
                 <Route path="/cart" element={<Cart />} />

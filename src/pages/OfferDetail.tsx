@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { OfferService } from "../services/offer.services"
 import Offer from "../models/Offer"
-import { StarRating } from "../components/StarRating"
 
 function OfferDetail() {
   const {id} = useParams()
@@ -33,7 +32,6 @@ function OfferDetail() {
     <div className="text-white">
       <div className="text-4xl font-extrabold dark:text-white">{offer.title}</div>
       <div className="text-2xl font-extrabold dark:text-white">{offer.description}</div>
-      <StarRating idOffer={Number(id)} />
       <div>Activo: {offer.active?'SI':'NO'}</div>
       <div>Email de contacto: {offer.contactEmail}</div>
       <div>Fecha publicación: {new Date(offer.published).toLocaleString()}</div>

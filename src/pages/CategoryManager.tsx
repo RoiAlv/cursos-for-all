@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react"
+/*import { FormEvent, useEffect, useState } from "react"
 import { CategoryService } from "../services/categoryService"
 import Category from "../models/Category"
 
@@ -65,4 +65,4 @@ function CategoryManager() {
     )
 }
 
-export default CategoryManager
+export default CategoryManager*/
