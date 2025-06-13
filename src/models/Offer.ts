@@ -1,11 +1,17 @@
-export default interface Offer{
+export default interface Offer {
     id: number
     title: string
     description?: string
     active: boolean
-    contactEmail?:string
-    location?:string
+    contactEmail?: string
+    location?: string
     published: string
-    expired:string
+    expired: string
     idCategory?: number | null
-}
+    userCreator?: {
+      email: string
+      name: string
+      surname: string
+    }
+  }
+  

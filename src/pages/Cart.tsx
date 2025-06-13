@@ -82,6 +82,11 @@ function Cart() {
             ))}
           </div>
 
+          {/* Aviso importante */}
+          <div className="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-400 rounded-md max-w-xl mx-auto">
+            <strong>Importante:</strong> Todos los pedidos serán pagados en el local.
+          </div>
+
           <div className="mt-6 flex flex-col items-center gap-2">
             <p className="text-lg font-semibold dark:text-white">Total: {total} €</p>
             <button
