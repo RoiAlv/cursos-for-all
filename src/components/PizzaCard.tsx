@@ -20,6 +20,9 @@ import carbonara from "../assets/carbonara.jpeg";
 import margarita from "../assets/margarita.jpeg";
 import perrito from "../assets/perrito.jpeg";
 import yorkbacona from "../assets/yorkbacona.jpeg";
+import nutella from "../assets/nutella.jpeg";
+import tita from "../assets/tita.jpeg";
+import española from "../assets/española.jpeg";
 
 import zero from "../assets/zero.webp";
 import nestea from "../assets/nestea.webp";
@@ -32,8 +35,6 @@ import mahou from "../assets/mahou.webp";
 import estrella from "../assets/estrella.png";
 import { useCart } from "../contexts/CartContext";
 
-
-
 export const pizzas = [
   { nombre: "La York", descripcion: "Tomate, mozzarella y jamón york", grupo: "A", imagen: york },
   { nombre: "La Margarita", descripcion: "Tomate, queso y mozzarella.", grupo: "A", imagen: margarita },
@@ -44,11 +45,11 @@ export const pizzas = [
   { nombre: "La Olivatun", descripcion: "Tomate, mozzarella, atún y aceitunas verdes", grupo: "B", imagen: olivatun },
   { nombre: "La Pepperoni", descripcion: "Tomate, mozzarella y pepperoni", grupo: "B", imagen: peperoni },
   { nombre: "La Cuatro Quesos", descripcion: "Tomate, mozzarella y mezcla de 4 quesos", grupo: "B", imagen: cuatroQuesos },
-  { nombre: "La Nutella", descripcion: "mozzarella, nutella y lacasitos", grupo: "B", imagen: "" },
+  { nombre: "La Nutella", descripcion: "mozzarella, nutella y lacasitos", grupo: "B", imagen: nutella },
   { nombre: "La Huerta", descripcion: "Tomate, mozzarella, pimiento rojo y verde, calabacín, berenjena, champiñones y maíz dulce", grupo: "C", imagen: huerta },
   { nombre: "La Mediterranea", descripcion: "Tomate, mozzarella, jamón york, champiñones tomate en rodajas, cebolla y pimienta negra", grupo: "C", imagen: mediterranea },
   { nombre: "La Anchoatún", descripcion: "Tomate, mozzarella, atún y anchoas", grupo: "C", imagen: "" },
-  { nombre: "La Española", descripcion: "Tomate, mozzarella, jamón serrano, tomate en rodajas y aceite de oliva", grupo: "C", imagen: "" },
+  { nombre: "La Española", descripcion: "Tomate, mozzarella, jamón serrano, tomate en rodajas y aceite de oliva", grupo: "C", imagen: española },
   { nombre: "La Lacon con Grelos", descripcion: "Tomate, mozzarella, grelos, lacón, chorizo, pimentón dulce, picante y aceite de oliva", grupo: "C", imagen: laconGrelos },
   { nombre: "La Mexicana", descripcion: "Tomate, mozzarella, carne de ternera, pimiento rojo, verde, y salsa picante", grupo: "C", imagen: mexicana },
   { nombre: "La Barbacoa", descripcion: "Tomate, mozzarella, carne de ternera, bacon, y salsa barbacoa", grupo: "C", imagen: barbacoa },
@@ -58,7 +59,7 @@ export const pizzas = [
   { nombre: "La Caprichosa", descripcion: "Tomate, mozzarella, york, bacon, champiñones, atún y cebolla", grupo: "D", imagen: "" },
   { nombre: "La Carbonara", descripcion: "Nata, mozzarella, bacon, champiñones, cebolla, y pimienta negra", grupo: "D", imagen: carbonara },
   { nombre: "La Campera", descripcion: "Tomate, mozzarella, carne de ternera, pollo, bacon y huevo", grupo: "D", imagen: "" },
-  { nombre: "La Tita", descripcion: "Tomate, mozzarella, jamón york, champiñones, pollo, cebolla y rulo de cabra", grupo: "D", imagen: "" },
+  { nombre: "La Tita", descripcion: "Tomate, mozzarella, jamón york, champiñones, pollo, cebolla y rulo de cabra", grupo: "D", imagen: tita },
 ];
 
 export const bebidas = [
@@ -86,7 +87,6 @@ export const preciosBebidas = {
   agua: '1,00€', 
   cerveza: '1,70€', 
 };
-
 
 export function PizzaCard({
   nombre,
@@ -122,37 +122,43 @@ export function PizzaCard({
       </div>
 
       <div className="mt-4 flex flex-col gap-2">
-        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-         onClick={() =>
-          addItem({
-            nombre,
-            tipo: "pizza",
-            tamaño: "fraccion",
-            precio: parsePrice(precio.fraccion),
-          })
-        }>
+        <button 
+          className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition cursor-pointer"
+          onClick={() =>
+            addItem({
+              nombre,
+              tipo: "pizza",
+              tamaño: "fraccion",
+              precio: parsePrice(precio.fraccion),
+            })
+          }
+        >
           Fracción: {precio.fraccion}
         </button>
-        <button className="w-full bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition"
-        onClick={() =>
-          addItem({
-            nombre,
-            tipo: "pizza",
-            tamaño: "mediana",
-            precio: parsePrice(precio.mediana),
-          })
-        }>
+        <button 
+          className="w-full bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition cursor-pointer"
+          onClick={() =>
+            addItem({
+              nombre,
+              tipo: "pizza",
+              tamaño: "mediana",
+              precio: parsePrice(precio.mediana),
+            })
+          }
+        >
           Mediana: {precio.mediana}
         </button>
-        <button className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-        onClick={() =>
-          addItem({
-            nombre,
-            tipo: "pizza",
-            tamaño: "familiar",
-            precio: parsePrice(precio.familiar),
-          })
-        }>
+        <button 
+          className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition cursor-pointer"
+          onClick={() =>
+            addItem({
+              nombre,
+              tipo: "pizza",
+              tamaño: "familiar",
+              precio: parsePrice(precio.familiar),
+            })
+          }
+        >
           Familiar: {precio.familiar}
         </button>
       </div>
@@ -208,15 +214,17 @@ export function BebidaCard({
       </div>
 
       <div className="mt-4 flex flex-col gap-2">
-        <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-        onClick={() =>
-          addItem({
-            nombre,
-            tipo: "bebida",
-            tamaño: "unica",
-            precio: parsePrice(precio),
-          })
-        }>
+        <button
+          className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition cursor-pointer"
+          onClick={() =>
+            addItem({
+              nombre,
+              tipo: "bebida",
+              tamaño: "unica",
+              precio: parsePrice(precio),
+            })
+          }
+        >
           {precio}
         </button>
       </div>

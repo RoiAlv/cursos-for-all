@@ -73,7 +73,7 @@ function Cart() {
                 </p>
 
                 <button
-                  className="mt-2 w-full px-3 py-2 text-sm font-medium text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  className="mt-2 w-full px-3 py-2 text-sm font-medium text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 cursor-pointer"
                   onClick={() => removeItem(index)}
                 >
                   Eliminar
@@ -90,7 +90,7 @@ function Cart() {
           <div className="mt-6 flex flex-col items-center gap-2">
             <p className="text-lg font-semibold dark:text-white">Total: {total} €</p>
             <button
-              className="px-5 py-2 text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              className="px-5 py-2 text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 cursor-pointer"
               onClick={clearCart}
             >
               Vaciar carrito
@@ -98,7 +98,7 @@ function Cart() {
             <button
               disabled={sending}
               onClick={handleFinalizeOrder}
-              className="px-5 py-2 text-white bg-green-700 rounded-lg hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 disabled:opacity-50 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="px-5 py-2 text-white bg-green-700 rounded-lg hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 disabled:opacity-50 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 cursor-pointer"
             >
               {sending ? "Enviando..." : "Finalizar pedido"}
             </button>
