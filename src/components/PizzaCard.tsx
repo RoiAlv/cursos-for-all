@@ -24,6 +24,7 @@ import nutella from "../assets/nutella.jpeg";
 import tita from "../assets/tita.jpeg";
 import española from "../assets/española.jpeg";
 import campera from "../assets/campera.jpeg";
+import caprichosa from "../assets/caprichosa.jpeg";
 
 import zero from "../assets/zero.webp";
 import nestea from "../assets/nestea.webp";
@@ -57,7 +58,7 @@ export const pizzas = [
   { nombre: "La Ruliña", descripcion: "Base de queso crema, mozarella, rulo de cabra, cebolla caramelizada", grupo: "C", imagen: rulina },
   { nombre: "La Gallega", descripcion: "Tomate, mozzarella, queso tetilla, pulpo, pimenton dulce, picante y aceite de oliva", grupo: "D", imagen: gallega },
   { nombre: "La Cuatro Estaciones", descripcion: "Tomate, mozzarella, jamón york, pepperoni, champiñones y aceitunas verdes", grupo: "D", imagen: cuatroEstaciones },
-  { nombre: "La Caprichosa", descripcion: "Tomate, mozzarella, york, bacon, champiñones, atún y cebolla", grupo: "D", imagen: "" },
+  { nombre: "La Caprichosa", descripcion: "Tomate, mozzarella, york, bacon, champiñones, atún y cebolla", grupo: "D", imagen: caprichosa },
   { nombre: "La Carbonara", descripcion: "Nata, mozzarella, bacon, champiñones, cebolla, y pimienta negra", grupo: "D", imagen: carbonara },
   { nombre: "La Campera", descripcion: "Tomate, mozzarella, carne de ternera, pollo, bacon y huevo", grupo: "D", imagen: campera },
   { nombre: "La Tita", descripcion: "Tomate, mozzarella, jamón york, champiñones, pollo, cebolla y rulo de cabra", grupo: "D", imagen: tita },
