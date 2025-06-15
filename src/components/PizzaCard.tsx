@@ -25,6 +25,7 @@ import tita from "../assets/tita.jpeg";
 import española from "../assets/española.jpeg";
 import campera from "../assets/campera.jpeg";
 import caprichosa from "../assets/caprichosa.jpeg";
+import anchoatun from "../assets/anchoatun.jpeg";
 
 import zero from "../assets/zero.webp";
 import nestea from "../assets/nestea.webp";
@@ -50,7 +51,7 @@ export const pizzas = [
   { nombre: "La Nutella", descripcion: "mozzarella, nutella y lacasitos", grupo: "B", imagen: nutella },
   { nombre: "La Huerta", descripcion: "Tomate, mozzarella, pimiento rojo y verde, calabacín, berenjena, champiñones y maíz dulce", grupo: "C", imagen: huerta },
   { nombre: "La Mediterranea", descripcion: "Tomate, mozzarella, jamón york, champiñones tomate en rodajas, cebolla y pimienta negra", grupo: "C", imagen: mediterranea },
-  { nombre: "La Anchoatún", descripcion: "Tomate, mozzarella, atún y anchoas", grupo: "C", imagen: "" },
+  { nombre: "La Anchoatún", descripcion: "Tomate, mozzarella, atún y anchoas", grupo: "C", imagen: anchoatun },
   { nombre: "La Española", descripcion: "Tomate, mozzarella, jamón serrano, tomate en rodajas y aceite de oliva", grupo: "C", imagen: española },
   { nombre: "La Lacon con Grelos", descripcion: "Tomate, mozzarella, grelos, lacón, chorizo, pimentón dulce, picante y aceite de oliva", grupo: "C", imagen: laconGrelos },
   { nombre: "La Mexicana", descripcion: "Tomate, mozzarella, carne de ternera, pimiento rojo, verde, y salsa picante", grupo: "C", imagen: mexicana },
