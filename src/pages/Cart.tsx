@@ -38,7 +38,7 @@ function Cart() {
     try {
       await OfferService.create(newOffer);
       clearCart();
-      toast.success("Pedido enviado correctamente");
+      toast.success("Pedido enviado correctamente. Paga en el local.");
     } catch (error) {
       console.error(error);
       toast.error("Error al enviar el pedido");
